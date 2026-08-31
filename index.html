@@ -1,766 +1,819 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rania Zamrizq - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-      :root {
-        --bg-main: #0f172a;
-        --bg-secondary: #1e293b; 
-        --text-main: #f8fafc; 
-        --text-muted: #94a3b8;
-        --accent-orange: #f59e0b;
-        --accent-blue: #3b82f6; 
-        --accent-pink: #ec4899;
-        --glass-bg: rgba(30, 41, 59, 0.4);
-        --glass-border: rgba(255, 255, 255, 0.1);
-      }
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rania Zamrizq - Portfolio</title>
+<meta name="description" content="Rania Zamrizq - Business Analyst, Project Management & AI Engineer. Portfolio of experiences, projects and certificates.">
 
-      body {
-        font-family: 'Poppins', sans-serif;
-        color: var(--text-main);
-        background-color: var(--bg-main);
-        overflow-x: hidden;
-      }
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rania Zamrizq - Portfolio">
+<meta property="og:description" content="Business Analyst, Project Management & AI Engineer portfolio.">
+<meta property="og:image" content="a1.png">
+<meta name="theme-color" content="#07070a">
 
-      h1, h2, h3, h4, h5 {
-        font-family: 'Outfit', sans-serif;
-      }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
 
-      .bg-orb-1, .bg-orb-2 {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(100px);
-        z-index: 0;
-        opacity: 0.4;
-        animation: floatOrb 10s infinite alternate ease-in-out;
-      }
-      .bg-orb-1 {
-        width: 400px; height: 400px;
-        background: var(--accent-orange);
-        top: -10%; left: -10%;
-      }
-      .bg-orb-2 {
-        width: 500px; height: 500px;
-        background: var(--accent-blue);
-        bottom: -20%; right: -10%;
-        animation-delay: 2s;
-      }
+<style>
+  :root {
+    --bg: #07070a;
+    --text-main: #ffffff;
+    --text-muted: #8e8e99;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent-1: #6a00ff; /* Purple */
+    --accent-2: #00d2ff; /* Cyan */
+    --accent-3: #ff5a2b; /* Original Orange */
+    --ease: cubic-bezier(.19, 1, .22, 1);
+  }
 
-      .section-padding {
-        padding: 6rem 1rem; 
-      }
-      @media (min-width: 1024px) {
-        .section-padding { padding: 8rem 4rem; }
-      }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html { background: var(--bg); scroll-behavior: smooth; }
+  
+  ::selection { background: var(--accent-1); color: #fff; }
 
-      .card-fancy {
-        background: var(--glass-bg) !important;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--glass-border) !important;
-        border-radius: 1.5rem !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-        color: var(--text-main) !important;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-      .card-fancy:hover {
-        border-color: var(--accent-orange) !important;
-        box-shadow: 0 10px 40px rgba(245, 158, 11, 0.2) !important;
-      }
+  body {
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+  }
 
-      .card-fancy h5 { color: var(--text-main); }
-      .card-fancy p, .card-fancy li { color: var(--text-muted); }
-      .card-fancy a { text-decoration: none; }
-      .card-fancy a:hover h5 { color: var(--accent-orange); }
+  @media (pointer: coarse) { body { cursor: auto; } }
 
-      .btn-fancy {
-        background: linear-gradient(135deg, var(--accent-orange), #ea580c);
-        color: #fff !important;
-        border: none !important;
-        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4) !important;
-        transition: all 0.3s ease-in-out;
-        border-radius: 9999px !important; 
-      }
-      .btn-fancy:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6) !important;
-      }
+  img { display: block; max-width: 100%; border-radius: 12px; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
 
-      .navbar-custom {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-        background: rgba(15, 23, 42, 0.75) !important;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        border-radius: 0;
-        box-shadow: none;
-        transition:
-          width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-          left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-          top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-          border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 0.45s ease,
-          background 0.45s ease;
-      }
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
 
-      .navbar-custom.navbar-scrolled {
-        top: 14px;
-        left: 28px;
-        width: calc(100% - 56px);
-        border-radius: 30px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(15, 23, 42, 0.88) !important;
-        box-shadow:
-          0 12px 35px rgba(0, 0, 0, 0.28),
-          0 2px 12px rgba(255, 255, 255, 0.04);
-      }
+  /* ---------- Global Layout & Gaps ---------- */
+    .wrap { 
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    /* Gunakan padding-inline untuk kiri-kanan saja */
+    padding-inline: clamp(1.5rem, 5vw, 4rem); 
+    }
 
-      @media (max-width: 1023px) {
-        .navbar-custom.navbar-scrolled {
-          top: 10px;
-          left: 14px;
-          width: calc(100% - 28px);
-          border-radius: 24px;
-        }
-      }
+    section { 
+    position: relative; 
+    z-index: 2; 
+    /* Gunakan padding-block untuk atas-bawah saja */
+    padding-block: clamp(5rem, 10vw, 8rem); 
+    }
+  /* ---------- Animated Mesh Gradient Background ---------- */
+  .bg-mesh {
+    position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    background: var(--bg); filter: blur(80px); opacity: 0.7;
+  }
+  .mesh-blob {
+    position: absolute; border-radius: 50%;
+    animation: floatBlob 20s infinite alternate ease-in-out;
+    mix-blend-mode: screen;
+  }
+  .mesh-1 { width: 50vw; height: 50vw; background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%); top: -10%; left: -10%; }
+  .mesh-2 { width: 40vw; height: 40vw; background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%); bottom: 10%; right: -10%; animation-delay: -5s; }
+  .mesh-3 { width: 45vw; height: 45vw; background: radial-gradient(circle, var(--accent-3) 0%, transparent 70%); top: 40%; left: 30%; animation-delay: -10s; opacity: 0.4; }
 
-      @media (max-width: 640px) {
-        .navbar-custom.navbar-scrolled {
-          top: 8px;
-          left: 10px;
-          width: calc(100% - 20px);
-          border-radius: 20px;
-        }
-      }
-      .nav-link-underline {
-        color: var(--text-main) !important;
-        position: relative;
-      }
-      .nav-link-underline::after {
-        content: ''; position: absolute;
-        width: 0; height: 3px;
-        bottom: -5px; left: 50%; transform: translateX(-50%);
-        background-color: var(--accent-orange);
-        transition: width 0.3s ease-in-out;
-        border-radius: 2px;
-      }
-      .nav-link-underline:hover::after { width: 100%; }
-      .nav-link-underline:hover { color: var(--accent-orange) !important; }
+  @keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(10vw, 15vh) scale(1.3); }
+  }
 
-      .card-fancy img {
-        border: 1px solid rgba(255,255,255,0.1) !important;
-        transition: transform 0.5s ease;
-      }
-      .card-fancy:hover img {
-        transform: scale(1.05);
-      }
+  /* ---------- Custom Cursor ---------- */
+  #cursor-dot, #cursor-ring {
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+    border-radius: 50%; transform: translate(-50%, -50%);
+  }
+  #cursor-dot { width: 8px; height: 8px; background: #fff; box-shadow: 0 0 10px #fff; }
+  #cursor-ring {
+    width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.4);
+    transition: width .3s var(--ease), height .3s var(--ease), background .3s var(--ease), border-color .3s;
+  }
+  #cursor-ring.hovered {
+    width: 70px; height: 70px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); border-color: transparent;
+  }
+  @media (pointer: coarse) { #cursor-dot, #cursor-ring { display: none; } }
 
-      @keyframes floatOrb {
-        0% { transform: translate(0, 0) scale(1); }
-        100% { transform: translate(30px, -50px) scale(1.1); }
-      }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes popIn {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
-      }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-      }
+  /* ---------- Preloader ---------- */
+  #preloader {
+    position: fixed; inset: 0; z-index: 10000; background: var(--bg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .pl-text { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 700; display: flex; overflow: hidden; }
+  .pl-text span { transform: translateY(100%); display: inline-block; }
+  .pl-bar-container { width: 200px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden; border-radius: 2px; }
+  .pl-bar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
 
-      .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-      .animate-pop-in { animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-      .animate-float { animation: float 4s ease-in-out infinite; }
+  /* ---------- Floating Nav ---------- */
+  .nav-wrapper {
+    position: fixed; top: 2rem; left: 0; width: 100%; z-index: 900;
+    display: flex; justify-content: center; padding: 0 clamp(1.5rem, 5vw, 4rem);
+    pointer-events: none;
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15, 15, 20, 0.6); backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border); border-radius: 100px;
+    padding: 0.8rem 1.5rem; width: 100%; max-width: 1000px; pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .nav .logo { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.2rem; }
+  .nav .logo span { color: var(--accent-2); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.3s; }
+  .nav-links a:hover { color: #fff; }
+  
+  .menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+  @media (max-width: 900px) { .nav-links { display: none; } .menu-btn { display: block; } }
 
-      .animated-element { opacity: 0; }
-      .animated-element.is-visible { opacity: 1; }
+  /* Mobile Menu */
+  #menu-overlay {
+    position: fixed; inset: 0; background: rgba(7, 7, 10, 0.95); backdrop-filter: blur(20px);
+    z-index: 1050; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
+    transform: translateY(-100%); transition: transform .6s var(--ease);
+  }
+  #menu-overlay.open { transform: translateY(0); }
+  #menu-overlay a { font-family: 'Space Grotesk'; font-size: 3rem; font-weight: 600; color: #fff; }
 
-      .delay-100 { animation-delay: 0.1s; }
-      .delay-300 { animation-delay: 0.3s; }
-      .delay-400 { animation-delay: 0.4s; }
-      .delay-500 { animation-delay: 0.5s; }
-      .delay-700 { animation-delay: 0.7s; }
+  /* ---------- Hero Section ---------- */
+  .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 8rem; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+  
+  .hero-text .eyebrow {
+    display: inline-block; padding: 0.5rem 1rem; border-radius: 100px;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;
+  }
+  .hero h1 { font-size: clamp(3rem, 7vw, 6rem); text-transform: uppercase; line-height: 1; margin-bottom: 1.5rem; }
+  .hero h1 span { display: block; background: linear-gradient(90deg, #fff, #a0a0b0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero h1 .gradient-text { background: linear-gradient(90deg, var(--accent-2), var(--accent-1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  
+  .hero-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 500px; line-height: 1.6; margin-bottom: 2.5rem; }
+  
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem;
+    background: #fff; color: #000; padding: 1rem 2rem; border-radius: 100px;
+    font-weight: 600; font-size: 1rem; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,255,255,0.2); }
+  
+  .hero-photo-wrap { position: relative; width: 100%; max-width: 420px; justify-self: end; }
+  .hero-photo {
+    width: 100%; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .floating-badge {
+    position: absolute; bottom: -20px; left: -20px;
+    background: rgba(20, 20, 25, 0.8); backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
+    padding: 1rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem;
+    animation: float 5s ease-in-out infinite reverse; z-index: 3;
+  }
+  .floating-badge i { font-size: 2rem; color: var(--accent-2); }
+  
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-      .carousel-item { padding: 4rem 2rem; border-radius: 1.5rem; transition: transform 0.3s ease;}
-      .carousel-item:hover { transform: translateY(-2px); }
-      .carousel-control-prev-icon, .carousel-control-next-icon { filter: none !important; }
-      .carousel-dark .carousel-control-next-icon, .carousel-dark .carousel-control-prev-icon { filter: invert(1) grayscale(100) !important; }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
+    .hero-photo-wrap { justify-self: center; order: -1; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .floating-badge { left: 50%; transform: translateX(-50%); bottom: -20px; animation: none; }
+  }
 
-      .bg-pattern-dots {
-        background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-        background-size: 30px 30px;
-      }
-      .bg-pattern-lines {
-        background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      
-      /* Gradient Text */
-      .text-gradient {
-        background: linear-gradient(to right, var(--accent-orange), var(--accent-pink));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    </style>
-  </head>
+  /* ---------- Marquee ---------- */
+  .marquee-strip {
+    background: var(--glass-bg); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
+    padding: 1.5rem 0; overflow: hidden; display: flex; position: relative; z-index: 2; backdrop-filter: blur(10px);
+    transform: rotate(-2deg) scale(1.05); margin: 3rem 0;
+  }
+  .marquee-track { display: flex; width: max-content; animation: marquee 20s linear infinite; }
+  .marquee-track span {
+    font-family: 'Space Grotesk'; font-size: 1.8rem; font-weight: 600; text-transform: uppercase;
+    padding: 0 2rem; display: flex; align-items: center; gap: 2rem; color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+  }
+  .marquee-track span i { color: var(--accent-2); font-size: 1.5rem; -webkit-text-stroke: 0; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  <body>
-    <nav class="navbar-custom">
-        <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
-            <a class="text-3xl font-extrabold text-white transition-colors duration-300" href="#" style="font-family: 'Outfit'">Rania<span class="text-gradient">.</span></a>
-            <button class="lg:hidden focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="text-white text-3xl ri-menu-line"></span>
-            </button>
-            <div class="hidden lg:flex lg:items-center lg:justify-center lg:flex-1" id="navbarNav">
-                <ul class="flex flex-col lg:flex-row lg:mx-auto space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 text-center">
-                    <li><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#char">Home</a></li>
-                    <li><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#experiences">Experiences</a></li>
-                    <li><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#about">About</a></li>
-                    <li><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#projects">Projects</a></li>
-                    <li><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#sertificates">Certificates</a></li>
-                    <li class="lg:hidden"><a class="nav-link-underline block px-4 py-2 text-lg font-semibold" href="#contact">Contact</a></li>
-                </ul>
-                <a class="btn-fancy hidden lg:block px-6 py-2.5 font-bold text-md" href="#contact">Let's Talk</a>
-            </div>
-        </div>
+  /* ---------- Section Headers ---------- */
+  .sec-head { margin-bottom: 3.5rem; text-align: center; }
+  .sec-head h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
+  .sec-head p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+
+  /* ---------- Experiences (Consistent Bento Grid) ---------- */
+  .exp-grid { 
+    display: grid; 
+    /* minmax diatur menggunakan fungsi min() agar tidak overflow/tabrakan di layar HP kecil */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); 
+    gap: 1.5rem; 
+  }
+  .glass-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;
+    padding: clamp(1.5rem, 4vw, 2.2rem); 
+    backdrop-filter: blur(10px); position: relative; overflow: hidden;
+    transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+    display: flex; flex-direction: column; /* Menjaga konsistensi jarak konten & gambar */
+    height: 100%;
+  }
+  .glass-card::before {
+    content: ''; position: absolute; inset: 0; background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%); opacity: 0; transition: opacity 0.4s; pointer-events: none;
+  }
+  .glass-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+  .glass-card:hover::before { opacity: 1; }
+  
+  .glass-card .idx { font-family: 'Space Grotesk'; font-size: 2.5rem; font-weight: 700; color: rgba(255,255,255,0.05); position: absolute; top: 1rem; right: 1.5rem; }
+  .glass-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #fff; padding-right: 2.5rem; line-height: 1.3; }
+  .glass-card p, .glass-card ul { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  .glass-card ul li { margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+  .glass-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent-2); }
+  .glass-card img { 
+    width: 100%; height: 180px; object-fit: cover; border-radius: 10px; 
+    margin-top: auto; /* Memaksa gambar selalu berada di bawah (konsisten) */
+    filter: grayscale(1); transition: filter 0.4s; 
+  }
+  .glass-card:hover img { filter: grayscale(0); }
+
+  /* ---------- About ---------- */
+  .about-container {
+    background: linear-gradient(135deg, rgba(20,20,25,0.8), rgba(10,10,15,0.8)); border: 1px solid var(--glass-border);
+    border-radius: 24px; padding: clamp(2rem, 5vw, 5rem); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    backdrop-filter: blur(20px); align-items: center;
+  }
+  .about-text h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+  .about-text p { font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.6; color: #e0e0e0; margin-bottom: 1.5rem; }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-content: flex-start; }
+  .skill-tag {
+    display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.2rem;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px;
+    font-size: 0.95rem; transition: background 0.3s, transform 0.3s;
+  }
+  .skill-tag i { color: var(--accent-1); font-size: 1.2rem; }
+  .skill-tag:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+  @media (max-width: 900px) { .about-container { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  /* ---------- Projects (Creative Grid) ---------- */
+  .proj-grid {
+    display: grid; 
+    /* Menggunakan min() untuk mencegah overflow pada mobile/tabrakan padding */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); 
+    gap: 1.5rem;
+  }
+  .proj-card {
+    position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3;
+    display: flex; flex-direction: column; cursor: pointer;
+  }
+  .proj-img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s var(--ease); border-radius: 0;
+  }
+  .proj-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    transition: background 0.4s;
+  }
+  .proj-content {
+    position: absolute; bottom: 0; left: 0; width: 100%; 
+    padding: clamp(1.2rem, 4vw, 2rem); z-index: 2;
+    transform: translateY(15px); opacity: 0.9; transition: transform 0.4s var(--ease), opacity 0.4s;
+  }
+  .proj-card:hover .proj-img { transform: scale(1.08); }
+  .proj-card:hover .proj-content { transform: translateY(0); opacity: 1; }
+  .proj-card h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); margin-bottom: 0.5rem; color: #fff; line-height: 1.3; }
+  .proj-card p { color: #ccc; font-size: 0.9rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .proj-card .icon-link {
+    position: absolute; top: 1.2rem; right: 1.2rem; z-index: 2;
+    width: 45px; height: 45px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; color: #fff; opacity: 0; transform: scale(0.5); transition: all 0.4s var(--ease);
+  }
+  .proj-card:hover .icon-link { opacity: 1; transform: scale(1); background: var(--accent-1); }
+
+  /* ---------- Certificates Swiper ---------- */
+  .cert-swiper { overflow: visible; padding-bottom: 2rem; }
+  .cert-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;
+    padding: clamp(1.5rem, 4vw, 2.5rem); min-height: 280px; 
+    display: flex; flex-direction: column; justify-content: space-between;
+    backdrop-filter: blur(10px); transition: border-color 0.4s;
+  }
+  .cert-card:hover { border-color: var(--accent-2); }
+  .cert-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .cert-top i { font-size: 2.2rem; color: var(--accent-2); }
+  .cert-card h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: #fff; line-height: 1.3; }
+  .cert-card p { color: var(--text-muted); margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.5; }
+  .cert-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+  .cert-nav-btns { display: flex; gap: 1rem; }
+  .cert-btn {
+    width: 45px; height: 45px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: none;
+    color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;
+  }
+  .cert-btn:hover { background: #fff; color: #000; }
+  
+  /* ---------- Contact ---------- */
+  .contact { text-align: center; padding: 6rem 0; }
+  .contact h2 { font-size: clamp(2.5rem, 7vw, 6rem); line-height: 1.1; margin-bottom: 3rem; }
+  .contact h2 span { color: var(--text-muted); display: block; font-size: clamp(1.8rem, 4vw, 3.5rem); margin-top: 0.5rem; }
+  
+  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .contact-links a {
+    padding: 1.2rem 2.5rem; border-radius: 100px; font-size: 1.05rem; font-weight: 500;
+    background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+    display: flex; align-items: center; gap: 0.8rem; transition: all 0.3s;
+  }
+  .contact-links a i { font-size: 1.3rem; color: var(--accent-2); }
+  .contact-links a:hover { background: #fff; color: #000; transform: translateY(-4px); box-shadow: 0 15px 30px rgba(255,255,255,0.1); }
+  .contact-links a:hover i { color: #000; }
+
+  footer {
+    padding: 2.5rem 0; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted);
+    display: flex; justify-content: space-between; align-items: center; padding: 2rem clamp(1.5rem, 5vw, 4rem);
+    flex-wrap: wrap; gap: 1rem;
+  }
+  #to-top { background: rgba(255,255,255,0.05); border: none; width: 45px; height: 45px; border-radius: 50%; color: #fff; cursor: pointer; transition: 0.3s; }
+  #to-top:hover { background: var(--accent-1); }
+
+  /* Utility */
+  .reveal { opacity: 0; transform: translateY(40px); }
+</style>
+</head>
+<body>
+
+  <!-- Animated Mesh Background -->
+  <div class="bg-mesh">
+    <div class="mesh-blob mesh-1"></div>
+    <div class="mesh-blob mesh-2"></div>
+    <div class="mesh-blob mesh-3"></div>
+  </div>
+
+  <div id="preloader">
+    <div class="pl-text"><span>Rania Zamrizq</span></div>
+    <div class="pl-bar-container"><div class="pl-bar"></div></div>
+  </div>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Floating Nav -->
+  <div class="nav-wrapper">
+    <nav class="nav">
+      <a href="#top" class="logo">RANIA<span>.</span></a>
+      <div class="nav-links">
+        <a href="#experiences" data-hover>Experiences</a>
+        <a href="#about" data-hover>About</a>
+        <a href="#projects" data-hover>Projects</a>
+        <a href="#certificates" data-hover>Certificates</a>
+      </div>
+      <a href="#contact" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;" data-hover>Let's Talk</a>
+      <button class="menu-btn" id="menuBtn"><i class="ri-menu-4-line"></i></button>
     </nav>
+  </div>
 
-    <section class="char section-padding flex items-center min-h-screen relative overflow-hidden" id="char">
-        <div class="bg-orb-1"></div>
-        <div class="absolute inset-0 bg-pattern-dots opacity-30 z-0"></div>
-        <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left z-10 relative">
-            <div class="lg:w-1/2 mb-12 lg:mb-0 animated-element animate-fade-in-up delay-100">
-                <p class="text-accent-orange font-bold tracking-widest uppercase mb-3">Portfolio & Resume</p>
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
-                    Hi, I'm <br><span class="text-gradient">Rania Zamrizq</span>
-                </h1>
-                <p class="text-xl text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">Motivated and detail-oriented individual with a strong interest in Business Development & Tech.</p>
-                <a class="btn-fancy px-8 py-4 font-bold text-lg inline-flex items-center" href="#projects">
-                    Explore Projects <i class="ri-arrow-right-line ml-2"></i>
-                </a>
-            </div>
-            <div class="lg:w-1/2 flex justify-center animated-element animate-pop-in delay-300">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
-                    <img src="a1.png" class="w-80 h-80 lg:w-[450px] lg:h-[450px] object-cover rounded-full border-4 border-white/10 relative z-10 animate-float shadow-2xl" alt="Foto Rania Zamrizq">
-                </div>
-            </div>
+  <div id="menu-overlay">
+    <a href="#top" class="menu-link">Home</a>
+    <a href="#experiences" class="menu-link">Experiences</a>
+    <a href="#about" class="menu-link">About</a>
+    <a href="#projects" class="menu-link">Projects</a>
+    <a href="#certificates" class="menu-link">Certificates</a>
+    <a href="#contact" class="menu-link">Contact</a>
+  </div>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero wrap" id="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Portfolio & Resume - 2026</span>
+          <h1 class="hero-title">
+            Creative <br>
+            <span class="gradient-text">Problem</span><br>
+            Solver.
+          </h1>
+          <p class="hero-sub">Hi, I'm Rania Zamrizq. Motivated and detail-oriented individual with a strong interest in Business Analyst & Tech - turning ideas into structured, goal-driven outcomes.</p>
+          <a href="#projects" class="btn-primary" data-hover>Explore My Work <i class="ri-arrow-right-down-line"></i></a>
         </div>
-    </section>
-
-    <section class="experiences section-padding relative overflow-hidden" id="experiences" style="background-color: var(--bg-secondary);">
-        <div class="absolute inset-0 bg-pattern-lines opacity-30 z-0"></div>
-        <div class="container mx-auto px-4 lg:px-8 text-center z-10 relative">
-            <h2 class="text-5xl lg:text-6xl font-extrabold mb-16 animated-element animate-fade-in-up delay-100">
-                My <span class="text-gradient">Experiences</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-100" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="t.jpeg" class="w-full h-48 object-cover mb-6 rounded-lg" alt="Movie Website">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">Business Analyst Intern</h5>
-                        <ul class="text-sm leading-relaxed list-disc pl-4 space-y-2">
-                            <li>Conducted business requirement analysis with stakeholders and translated them into clear structured requirements.</li>
-                            <li>Developed and maintained documentation (BRD, FRD, SRS) and process flow diagrams.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-300" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="r.png" class="w-full h-48 object-cover mb-6 rounded-lg" alt="Movie Website">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">AI Engineer Scholarship Awardee</h5>
-                        <ul class="text-sm leading-relaxed list-disc pl-4 space-y-2">
-                            <li>Participated in a self-paced AI Engineer learning program by Pijak & IBM SkillsBuild.</li>
-                            <li>Studied core concepts of AI and machine learning through real-world case studies.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-500" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="a.png" class="w-full h-48 object-cover mb-6 rounded-lg" alt="Movie Website">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">Business Process Modeling Practicum Assistant</h5>
-                        <ul class="text-sm leading-relaxed list-disc pl-4 space-y-2">
-                            <li>Assisted in teaching 2 classes for the BPM practicum, delivering clear explanations.</li>
-                            <li>Developed instructional modules and teaching materials to support student learning.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-100" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="f.jpg" alt="Mentor WebVenture" class="w-full h-48 object-cover mb-6 rounded-lg">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">Mentor at WebVenture</h5>
-                        <ul class="text-sm leading-relaxed list-disc pl-4 space-y-2">
-                            <li>Guided ~50 participants in developing personal portfolios and self-branding strategies.</li>
-                            <li>Led mentoring sessions providing UI/UX feedback to refine their portfolios.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-300" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="b.png" class="w-full h-48 object-cover mb-6 rounded-lg" alt="Movie Website">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">MC at Maulid Nabi Muhammad SAW</h5>
-                        <p class="text-sm leading-relaxed">Took a step out of my comfort zone to improve communication skills by serving as MC, gaining deeper understanding of proper intonation and growing confidence.</p>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-500" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="c.jpg" alt="MC Greenhouse" class="w-full h-48 object-cover mb-6 rounded-lg">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-3">MC at 'Automatic Watering Plant' Event</h5>
-                        <p class="text-sm leading-relaxed">Enhanced public speaking skills by serving as MC at SMK Nagrak Boarding School. Honored to be part of this community service initiative.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about section-padding relative overflow-hidden" id="about">
-        <div class="bg-orb-2"></div>
-        <div class="absolute inset-0 bg-pattern-dots opacity-20 z-0"></div>
-        <div class="container mx-auto px-4 lg:px-8 text-center max-w-5xl z-10 relative">
-            <h2 class="text-5xl lg:text-6xl font-extrabold mb-10 animated-element animate-fade-in-up delay-100">About <span class="text-gradient">Me</span></h2>
-            <div class="p-8 animated-element animate-fade-in-up delay-300">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-10">
-                    Motivated and detail-oriented individual with a strong interest in Business Development. Since my third semester of university, I have actively pursued project management by completing multiple certifications ranging from fundamental concepts to hands-on project implementation. I continuously develop my skills in planning, execution, and coordination, committed to delivering structured, efficient, and goal-driven project outcomes. 
-                </p>             
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-blue-500/20 group-hover:border-blue-500/50 transition-all duration-300">
-                            <i class="ri-code-s-slash-line text-3xl text-blue-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Web Dev</p>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-green-500/20 group-hover:border-green-500/50 transition-all duration-300">
-                            <i class="ri-database-2-line text-3xl text-green-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Data Analysis</p>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-yellow-500/20 group-hover:border-yellow-500/50 transition-all duration-300">
-                            <i class="ri-lightbulb-line text-3xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Problem Solving</p>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-orange-500/20 group-hover:border-orange-500/50 transition-all duration-300">
-                            <i class="bi bi-people-fill text-3xl text-orange-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Adaptability</p>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-pink-500/20 group-hover:border-pink-500/50 transition-all duration-300">
-                            <i class="bi bi-megaphone text-3xl text-pink-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Public Speaking</p>
-                    </div>
-                    <div class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-3 border border-white/10 group-hover:bg-purple-500/20 group-hover:border-purple-500/50 transition-all duration-300">
-                            <i class="bi bi-alarm text-3xl text-purple-400 group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <p class="text-sm font-semibold">Time Management</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects section-padding relative overflow-hidden" id="projects" style="background-color: var(--bg-secondary);">
-        <div class="absolute inset-0 bg-pattern-lines opacity-20 z-0"></div>
-        <div class="container mx-auto px-4 lg:px-8 text-center z-10 relative">
-            <h2 class="text-5xl lg:text-6xl font-extrabold mb-16 animated-element animate-fade-in-up delay-100">Featured <span class="text-gradient">Projects</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-100" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="s.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="poster">
-                    <div class="card-body w-full">
-                      <a href="https://drive.google.com/file/d/1gMvi2wV35QvQalpDwsyRluvRTwmY0euB/view?usp=sharing" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Radius Data Solusi Projects <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Assisted in business analysis by gathering stakeholder requirements, mapping business processes, and supporting documentation.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-200" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="m.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="poster">
-                    <div class="card-body w-full">
-                      <a href="https://aryuzura.github.io/portbloom/" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">PORTBLOOM Pre-Order Website <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Developed a pre-order website for PORTBLOOM, focusing on usability, simplicity, and seamless ordering flow for customers.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-300" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="p.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="UI">
-                    <div class="card-body w-full">
-                      <a href="https://github.com/aryuzura/capstoneproject_raniazamrizq" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">IBM Granite Certification Project <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Built using Python, Jupyter Notebook, & ngrok. Implemented data preprocessing, feature importance analysis, and model evaluation.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-400" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="n1.jpg" class="w-full h-48 object-cover mb-4 rounded-lg" alt="poster">
-                    <div class="card-body w-full">
-                      <a href="https://drive.google.com/file/d/1XK3WJhtag3NxCm_BcYVvMvyHtBNsC0D-/view?usp=sharing" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Sales Performance Optimization <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Explains sales predictive models (Logistic Regression & Random Forest) to predict target achievement.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-500" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="m1.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="poster">
-                    <div class="card-body w-full">
-                      <a href="https://drive.google.com/file/d/1z88_tzNx7VAPPPYEkNpiI3swkFygJ3_C/view?usp=sharing" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Data-Driven Sales Analysis <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Analyzed sales data using data mining to predict target achievement with 83% accuracy for strategic decisions.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-600" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="n.jpg" class="w-full h-48 object-cover mb-4 rounded-lg" alt="poster">
-                    <div class="card-body w-full">
-                      <a href="https://drive.google.com/drive/folders/1TtrHTMWpWttVscEl1UeQs6svmIwjVC_6?usp=drive_link" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Project Management Planning <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Developed a comprehensive project schedule, defining milestones and timelines aligned with SDG 4 and SDG 5.</p>
-                      </a>
-                    </div>
-                </div>
-                
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-100" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="o.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="UI">
-                    <div class="card-body w-full">
-                      <a href="https://www.figma.com/design/WLgQ0m7qNR5NVRckrCWiQx/Untitled?m=auto&t=getLMPcLkft8zI3v-6" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">UI/UX Design BudgetIn <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Designed a modern and user-centered UI/UX concept focusing on clean visual hierarchy tailored to fintech users.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-200" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="i.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="UI">
-                    <div class="card-body w-full">
-                      <a href="https://www.figma.com/design/lheis6RjuAYgiPxeosnTfv/Untitled?node-id=0-1&t=Js9aIGjTGBW0ljvF-1" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">UI & UX Movie Website <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Designed a movie-themed website interface using Figma to enhance user comfort and visual aesthetics.</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-300" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="d.jpg" class="w-full h-48 object-cover mb-4 rounded-lg" alt="Movie Website">
-                    <div class="card-body w-full">
-                      <a href="https://github.com/aryuzura/movie-list.git" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Movie Website (React.js) <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Currently learning to build a movie-themed website using React.js and the IMDb API! 🎬💻</p>
-                      </a>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-400" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="e.jpg" class="w-full h-48 object-cover mb-4 rounded-lg" alt="Food Calorie App">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Food Calorie Checker App</h5>
-                        <p class="text-sm leading-relaxed">Developed a food calorie checker app using SAP Build Apps and managed dataset with SAP Analytics Cloud.</p>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-500" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="g.jpeg" class="w-full h-48 object-cover mb-4 rounded-lg" alt="Jurnal Ilmiah">
-                    <div class="card-body w-full">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Library Innovation (1st Winner)</h5>
-                        <p class="text-sm leading-relaxed">Wrote a scientific paper based on motivation to increase students' interest in reading at Open Library Telkom Univ.</p>
-                    </div>
-                </div>
-
-                <div class="card-fancy p-6 flex flex-col items-center text-left animated-element animate-fade-in-up delay-600" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5">
-                    <img src="h.png" class="w-full h-48 object-cover mb-4 rounded-lg" alt="Web App">
-                    <div class="card-body w-full">
-                      <a href="https://github.com/aryuzura/project-laravel.git" target="_blank" class="block">
-                        <h5 class="text-xl font-bold mb-2 transition-colors">Competition Registration Web <i class="ri-external-link-line text-sm opacity-50 ml-1"></i></h5>
-                        <p class="text-sm leading-relaxed">Built a competition registration web app using PHP Laravel with user auth and form features.</p>
-                      </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="sertificates section-padding relative overflow-hidden" id="sertificates">
-        <div class="bg-orb-1 opacity-20"></div>
-        <div class="absolute inset-0 bg-pattern-dots opacity-20 z-0"></div>
-        <div class="container mx-auto px-4 lg:px-8 text-center z-10 relative">
-            <h2 class="text-5xl lg:text-6xl font-extrabold mb-16 animated-element animate-fade-in-up delay-100">My <span class="text-gradient">Certificates</span></h2>
-            
-            <div id="carouselExample" class="carousel slide carousel-dark carousel-fade max-w-5xl mx-auto rounded-3xl p-4 md:p-8 bg-slate-800/60 backdrop-blur-xl border border-white/10 shadow-2xl animated-element animate-pop-in delay-300">
-                <div class="carousel-inner h-48 flex items-center">
-                    
-                    <div class="carousel-item active">
-                        <a href="https://drive.google.com/file/d/1jG2UNC5LOXhZMcnBbiRuY61zGMlw8WPb/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Internship Assessment Transcript</p>
-                            <h5 class="text-lg font-bold text-orange-400">by PT Radius Data Solusi</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1P8NjmX11ukL319vF3np8okzmHjoAca5G/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Pijak & IBM SkillsBuild AI Engineer</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Dicoding & IBM SkillsBuild</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1g10hz05fU7X1PkqK7E1902zTbdYx9L0K/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Final Courses & Certificate Project Management</p>
-                            <h5 class="text-lg font-bold text-orange-400">by COURSERA (FGA DTS 2025)</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/S8M4R32OALMV" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Google Project Management</p>
-                            <h5 class="text-lg font-bold text-orange-400">by COURSERA</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1Dw4KOYBEPeItLN7SVW3wO4QvxqdjhWKR/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Intermediate Project Management</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Digitalent KOMDIGI</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1V4OoL5z8bE811DMX4xzfsbCqPX_2eiRz/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Fundamental Project Management</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Digitalent KOMDIGI</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1ZF2sUKCWUD914uu6uzbNNK2-CAYa9kj6/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Data Classification & Summarization (Granite)</p>
-                            <h5 class="text-lg font-bold text-orange-400">by IBM SkillsBuild</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1KdBfhoJ6O6sYyU9ljcwYTQvZmka6eb7-/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">IBM Granite Transcript</p>
-                            <h5 class="text-lg font-bold text-orange-400">by IBM SkillsBuild</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1Cs469Xkhsi2KpFg4rvb3jj9PYBsfYPNu/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Dasar-Dasar Implementasi Kecerdasan Artifisial</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Digitalent KOMDIGI</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1SuEquBbjZGWnVRixnjSBNBKhYcrdZE8Z/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Exploring Cyber Security and Cloud Computing</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Dicoding</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/14miVpmg2mCmCO_8Dp-MOHlUFQIxpvWPZ/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Clean Architecture in Action</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Dicoding</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1c3sh3plBFmvYG2Wgav8RXmr7e3-0tAjJ/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Usability Testing: How and Why?</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1O99R-q59MgMUWXMh09mJDxwbYuIQDbse/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Leadership & Comms in IT Project Management</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/15XPJ-WO4AscWF7ZxW2pCdKuLyqlPxVTY/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Automatic Watering Plant (Greenhouse)</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1_dsys74Dy_FKQ2q5e2Rc74H9g9yzQYPF/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">NgabuburIT: Starting Using Git</p>
-                            <h5 class="text-lg font-bold text-orange-400">by GDSC Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1bR4imQBc6oLPLhe88rMi1QRJKCMPMb7W/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Workshop React Java Script</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Dicoding</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1ply2JKNs1XwgTPv6rrPR6RZ-MzcaV2w-/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Library Innovation for the Future</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Open Library Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1SPuHLzil2PFoCbPE1Y52VeIjlQt3WNvJ/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">ASEAN Data Science Explorers 2024</p>
-                            <h5 class="text-lg font-bold text-orange-400">by ASEAN Data Science Explorers 2024</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1ZFFIP8DV_wVFDSEccR_rPgAAlinv8iFm/view?usp=drive_link" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">Data Analytics in Business Decision Making</p>
-                            <h5 class="text-lg font-bold text-orange-400">by GDSC Telkom University</h5>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://drive.google.com/file/d/1Mt-MhhOJq1OQI8rzJXIs4mGPt7xlYILy/view?usp=sharing" target="_blank" class="block hover:text-accent-orange transition-colors">
-                            <p class="text-xl md:text-2xl font-semibold mb-3 text-white">WebVenture Mentorship</p>
-                            <h5 class="text-lg font-bold text-orange-400">by Telkom University</h5>
-                        </a>
-                    </div>
-
-                </div>
-                
-                <button class="carousel-control-prev absolute left-2 md:left-4 top-1/2 -translate-y-1/2" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="text-5xl ri-arrow-left-s-line text-white hover:text-orange-400 transition-colors" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next absolute right-2 md:right-4 top-1/2 -translate-y-1/2" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="text-5xl ri-arrow-right-s-line text-white hover:text-orange-400 transition-colors" aria-hidden="true"></span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact section-padding relative overflow-hidden" id="contact" style="background-color: var(--bg-secondary);">
-      <div class="absolute inset-0 bg-pattern-lines opacity-20 z-0"></div>
-      <div class="container mx-auto px-4 lg:px-8 text-center z-10 relative">
-        <h2 class="text-5xl lg:text-6xl font-extrabold mb-16 animated-element animate-fade-in-up delay-100">Let's <span class="text-gradient">Connect</span></h2>
-        
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-          <div class="animated-element animate-pop-in delay-200">
-            <a href="mailto:raniazamrizq23@gmail.com" class="group flex flex-col items-center bg-slate-800/50 p-8 rounded-3xl border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-2 w-48">
-                <div class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500 transition-colors">
-                    <i class="ri-mail-line text-3xl text-orange-500 group-hover:text-white transition-colors"></i>
-                </div>
-                <p class="font-semibold text-lg">Email</p>
-            </a>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo" data-hover>
+            <img src="a1.png" alt="Rania Zamrizq">
           </div>
-
-          <div class="animated-element animate-pop-in delay-300">
-            <a href="https://www.linkedin.com/in/raniazamrizq" target="_blank" class="group flex flex-col items-center bg-slate-800/50 p-8 rounded-3xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2 w-48">
-                <div class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors">
-                    <i class="ri-linkedin-fill text-3xl text-blue-500 group-hover:text-white transition-colors"></i>
-                </div>
-                <p class="font-semibold text-lg">LinkedIn</p>
-            </a>
-          </div>
-
-          <div class="animated-element animate-pop-in delay-400">
-            <a href="https://www.instagram.com/rzamrizq/?igsh=MXE4ZnNsbXJlaGVpcw%3D%3D#" target="_blank" class="group flex flex-col items-center bg-slate-800/50 p-8 rounded-3xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 w-48">
-                <div class="w-16 h-16 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:bg-pink-500 transition-colors">
-                    <i class="ri-instagram-fill text-3xl text-pink-500 group-hover:text-white transition-colors"></i>
-                </div>
-                <p class="font-semibold text-lg">Instagram</p>
-            </a>
-          </div>
-          
-          <div class="animated-element animate-pop-in delay-500">
-            <a href="tel:+6282111371337" class="group flex flex-col items-center bg-slate-800/50 p-8 rounded-3xl border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2 w-48">
-                <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors">
-                    <i class="ri-phone-line text-3xl text-green-500 group-hover:text-white transition-colors"></i>
-                </div>
-                <p class="font-semibold text-lg">Phone</p>
-            </a>
+          <div class="floating-badge">
+            <i class="ri-bar-chart-box-line"></i>
+            <div>
+              <div style="font-weight: 600; color: #fff; font-size: 0.95rem;">Business & Tech</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Data-driven approaches</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="text-center py-8 border-t border-white/10 text-gray-400 text-sm">
-        <div>&copy; 2026 Rania Zamrizq. All Rights Reserved.</div>
-    </footer>
+    <!-- Marquee -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span><i class="ri-sparkling-line"></i>Business Development<i class="ri-sparkling-line"></i>Project Management<i class="ri-sparkling-line"></i>Data Analysis<i class="ri-sparkling-line"></i>UI/UX Design<i class="ri-sparkling-line"></i>Public Speaking</span>
+        <span><i class="ri-sparkling-line"></i>Business Development<i class="ri-sparkling-line"></i>Project Management<i class="ri-sparkling-line"></i>Data Analysis<i class="ri-sparkling-line"></i>UI/UX Design<i class="ri-sparkling-line"></i>Public Speaking</span>
+      </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const animatedElements = document.querySelectorAll('.animated-element');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target); 
-            }
-          });
-        }, { threshold: 0.1 }); 
+    <!-- Experiences -->
+    <section id="experiences" class="wrap">
+      <div class="sec-head reveal">
+        <h2>Experience</h2>
+        <p>A timeline of internships, assistantships and events where I put planning and communication into practice.</p>
+      </div>
+      <div class="exp-grid">
+        
+        <div class="glass-card reveal">
+          <span class="idx">01</span>
+          <h3>Business Analyst Intern</h3>
+          <ul>
+            <li>Conducted business requirement analysis with stakeholders.</li>
+            <li>Developed and maintained documentation (BRD, FRD, SRS).</li>
+          </ul>
+          <img src="t.jpeg" alt="Business Analyst Intern">
+        </div>
 
-        animatedElements.forEach(element => {
-          observer.observe(element);
-        });
+        <div class="glass-card reveal">
+          <span class="idx">02</span>
+          <h3>AI Engineer Scholarship Awardee</h3>
+          <ul>
+            <li>Participated in a self-paced AI Engineer learning program by Pijak & IBM SkillsBuild.</li>
+            <li>Studied core concepts of AI and machine learning.</li>
+          </ul>
+          <img src="r.png" alt="AI Engineer Scholarship">
+        </div>
 
-        const navbar = document.querySelector('.navbar-custom');
+        <div class="glass-card reveal">
+          <span class="idx">03</span>
+          <h3>Business Process Modeling Asst.</h3>
+          <ul>
+            <li>Assisted in teaching 2 classes for the BPM practicum.</li>
+            <li>Developed instructional modules and teaching materials.</li>
+          </ul>
+          <img src="a.png" alt="BPM Assistant">
+        </div>
 
-        const updateNavbarOnScroll = () => {
-          if (!navbar) return;
-          navbar.classList.toggle('navbar-scrolled', window.scrollY > 20);
-        };
+        <div class="glass-card reveal">
+          <span class="idx">04</span>
+          <h3>Mentor at WebVenture</h3>
+          <ul>
+            <li>Guided ~50 participants in developing personal portfolios.</li>
+            <li>Led mentoring sessions providing UI/UX feedback.</li>
+          </ul>
+          <img src="f.jpg" alt="Mentor at WebVenture">
+        </div>
 
-        updateNavbarOnScroll();
-        window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
+        <div class="glass-card reveal">
+          <span class="idx">05</span>
+          <h3>MC at Maulid Nabi Muhammad SAW</h3>
+          <p>Took a step out of my comfort zone to improve communication skills by serving as MC, gaining deeper understanding of proper intonation.</p>
+          <img src="b.png" alt="MC Maulid">
+        </div>
 
-        const navbarToggler = document.querySelector('[data-bs-toggle="collapse"]');
-        const navbarCollapse = document.getElementById('navbarNav');
+        <div class="glass-card reveal">
+          <span class="idx">06</span>
+          <h3>MC at 'Automatic Watering Plant'</h3>
+          <p>Enhanced public speaking skills by serving as MC at SMK Nagrak Boarding School community service initiative.</p>
+          <img src="c.jpg" alt="MC Event">
+        </div>
 
-        if (navbarToggler && navbarCollapse) {
-          navbarToggler.addEventListener('click', () => {
-            navbarCollapse.classList.toggle('hidden');
-            navbarCollapse.classList.toggle('flex');
-            navbarCollapse.classList.toggle('flex-col');
-            navbarCollapse.classList.toggle('mt-4'); 
-            navbarCollapse.classList.toggle('bg-slate-900/90');
-            navbarCollapse.classList.toggle('rounded-2xl');
-            navbarCollapse.classList.toggle('p-4');
-          });
+      </div>
+    </section>
 
-          const navLinks = navbarCollapse.querySelectorAll('.nav-link-underline');
-          navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-              if (window.innerWidth < 1024) {
-                navbarCollapse.classList.add('hidden');
-                navbarCollapse.classList.remove('flex', 'flex-col', 'mt-4', 'bg-slate-900/90', 'rounded-2xl', 'p-4');
-              }
-            });
-          });
-        }
+    <!-- About -->
+    <section id="about" class="wrap">
+      <div class="about-container reveal">
+        <div class="about-text">
+          <h2>Beyond<br><span style="color:var(--accent-1)">The Resume.</span></h2>
+          <p>Since my third semester of university, I have actively pursued project management by completing multiple certifications ranging from fundamental concepts to hands-on project implementation.</p>
+          <p>I continuously develop my skills in planning, execution, and coordination, committed to delivering structured, efficient, and goal-driven outcomes.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-tag" data-hover><i class="ri-code-s-slash-line"></i> Web Development</div>
+          <div class="skill-tag" data-hover><i class="ri-database-2-line"></i> Data Analysis</div>
+          <div class="skill-tag" data-hover><i class="ri-lightbulb-flash-line"></i> Problem Solving</div>
+          <div class="skill-tag" data-hover><i class="ri-group-line"></i> Adaptability</div>
+          <div class="skill-tag" data-hover><i class="ri-mic-line"></i> Public Speaking</div>
+          <div class="skill-tag" data-hover><i class="ri-time-line"></i> Time Management</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="wrap">
+      <div class="sec-head reveal">
+        <h2>Selected Works</h2>
+        <p>A collection of business analysis, data, and design projects.</p>
+      </div>
+      <div class="proj-grid">
+        
+        <a href="https://drive.google.com/file/d/1gMvi2wV35QvQalpDwsyRluvRTwmY0euB/view?usp=sharing" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="s.png" alt="Radius Data Solusi">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Radius Data Solusi</h3>
+            <p>Assisted in business analysis by gathering stakeholder requirements, mapping business processes.</p>
+          </div>
+        </a>
+
+        <a href="https://aryuzura.github.io/portbloom/" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="m.png" alt="PORTBLOOM">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>PORTBLOOM Pre-Order</h3>
+            <p>Developed a pre-order website for PORTBLOOM, focusing on usability, simplicity, and seamless ordering.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/aryuzura/capstoneproject_raniazamrizq" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="p.png" alt="IBM Granite">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>IBM Granite Certification</h3>
+            <p>Built using Python, Jupyter Notebook, & ngrok. Implemented data preprocessing and model evaluation.</p>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1XK3WJhtag3NxCm_BcYVvMvyHtBNsC0D-/view?usp=sharing" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="n1.jpg" alt="Sales Performance">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Sales Perf. Optimization</h3>
+            <p>Explains sales predictive models (Logistic Regression & Random Forest) to predict target achievement.</p>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1z88_tzNx7VAPPPYEkNpiI3swkFygJ3_C/view?usp=sharing" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="m1.png" alt="Data-Driven Sales">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Data-Driven Sales Analysis</h3>
+            <p>Analyzed sales data using data mining to predict target achievement with 83% accuracy.</p>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1TtrHTMWpWttVscEl1UeQs6svmIwjVC_6?usp=drive_link" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="n.jpg" alt="PM Planning">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Project Management Planning</h3>
+            <p>Developed a comprehensive project schedule, defining milestones and timelines aligned with SDG 4 & 5.</p>
+          </div>
+        </a>
+
+        <a href="https://www.figma.com/design/WLgQ0m7qNR5NVRckrCWiQx/Untitled?m=auto&t=getLMPcLkft8zI3v-6" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="o.png" alt="BudgetIn UI/UX">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>UI/UX Design BudgetIn</h3>
+            <p>Designed a modern and user-centered UI/UX concept focusing on clean visual hierarchy.</p>
+          </div>
+        </a>
+
+        <a href="https://www.figma.com/design/lheis6RjuAYgiPxeosnTfv/Untitled?node-id=0-1&t=Js9aIGjTGBW0ljvF-1" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="i.png" alt="Movie UI">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>UI & UX Movie Website</h3>
+            <p>Designed a movie-themed website interface using Figma to enhance user comfort.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/aryuzura/movie-list.git" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="d.jpg" alt="Movie React">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Movie Website (React.js)</h3>
+            <p>Currently learning to build a movie-themed website using React.js and the IMDb API!</p>
+          </div>
+        </a>
+
+        <div class="proj-card reveal" data-hover>
+          <img class="proj-img" src="e.jpg" alt="Calorie App">
+          <div class="proj-content">
+            <h3>Food Calorie Checker App</h3>
+            <p>Developed a food calorie checker app using SAP Build Apps and SAP Analytics Cloud.</p>
+          </div>
+        </div>
+
+        <div class="proj-card reveal" data-hover>
+          <img class="proj-img" src="g.jpeg" alt="Library Innovation">
+          <div class="proj-content">
+            <h3>Library Innovation (1st Winner)</h3>
+            <p>Wrote a scientific paper based on motivation to increase students' interest in reading.</p>
+          </div>
+        </div>
+
+        <a href="https://github.com/aryuzura/project-laravel.git" target="_blank" class="proj-card reveal" data-hover>
+          <img class="proj-img" src="h.png" alt="Laravel Reg">
+          <div class="icon-link"><i class="ri-arrow-right-up-line"></i></div>
+          <div class="proj-content">
+            <h3>Competition Registration Web</h3>
+            <p>Built a competition registration web app using PHP Laravel with user auth.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates" class="wrap">
+      <div class="sec-head reveal">
+        <h2>Certifications</h2>
+        <p>Swipe through 20 milestones in project management, AI, and data.</p>
+      </div>
+
+      <div class="swiper cert-swiper reveal">
+        <div class="swiper-wrapper">
+          <script>
+            const certs = [
+              { id:"01", title:"Internship Assessment Transcript", org:"PT Radius Data Solusi", link:"https://drive.google.com/file/d/1jG2UNC5LOXhZMcnBbiRuY61zGMlw8WPb/view?usp=sharing" },
+              { id:"02", title:"Pijak & IBM SkillsBuild AI Engineer", org:"Dicoding & IBM SkillsBuild", link:"https://drive.google.com/file/d/1P8NjmX11ukL319vF3np8okzmHjoAca5G/view?usp=sharing" },
+              { id:"03", title:"Final Courses & Cert. Project Mgmt", org:"COURSERA", link:"https://drive.google.com/file/d/1g10hz05fU7X1PkqK7E1902zTbdYx9L0K/view?usp=drive_link" },
+              { id:"04", title:"Google Project Management", org:"COURSERA", link:"https://www.coursera.org/account/accomplishments/specialization/S8M4R32OALMV" },
+              { id:"05", title:"Intermediate Project Management", org:"Digitalent KOMDIGI", link:"https://drive.google.com/file/d/1Dw4KOYBEPeItLN7SVW3wO4QvxqdjhWKR/view?usp=drive_link" },
+              { id:"06", title:"Fundamental Project Management", org:"Digitalent KOMDIGI", link:"https://drive.google.com/file/d/1V4OoL5z8bE811DMX4xzfsbCqPX_2eiRz/view?usp=drive_link" },
+              { id:"07", title:"Data Classification (Granite)", org:"IBM SkillsBuild", link:"https://drive.google.com/file/d/1ZF2sUKCWUD914uu6uzbNNK2-CAYa9kj6/view?usp=drive_link" },
+              { id:"08", title:"IBM Granite Transcript", org:"IBM SkillsBuild", link:"https://drive.google.com/file/d/1KdBfhoJ6O6sYyU9ljcwYTQvZmka6eb7-/view?usp=sharing" },
+              { id:"09", title:"Dasar Implementasi AI", org:"Digitalent KOMDIGI", link:"https://drive.google.com/file/d/1Cs469Xkhsi2KpFg4rvb3jj9PYBsfYPNu/view?usp=sharing" },
+              { id:"10", title:"Cyber Security & Cloud", org:"Dicoding", link:"https://drive.google.com/file/d/1SuEquBbjZGWnVRixnjSBNBKhYcrdZE8Z/view?usp=sharing" },
+              { id:"11", title:"Clean Architecture in Action", org:"Dicoding", link:"https://drive.google.com/file/d/14miVpmg2mCmCO_8Dp-MOHlUFQIxpvWPZ/view?usp=drive_link" },
+              { id:"12", title:"Usability Testing", org:"Telkom University", link:"https://drive.google.com/file/d/1c3sh3plBFmvYG2Wgav8RXmr7e3-0tAjJ/view?usp=drive_link" },
+              { id:"13", title:"Leadership & Comms in IT PM", org:"Telkom University", link:"https://drive.google.com/file/d/1O99R-q59MgMUWXMh09mJDxwbYuIQDbse/view?usp=drive_link" },
+              { id:"14", title:"Automatic Watering Plant", org:"Telkom University", link:"https://drive.google.com/file/d/15XPJ-WO4AscWF7ZxW2pCdKuLyqlPxVTY/view?usp=sharing" },
+              { id:"15", title:"NgabuburIT: Starting Using Git", org:"GDSC Telkom Univ", link:"https://drive.google.com/file/d/1_dsys74Dy_FKQ2q5e2Rc74H9g9yzQYPF/view?usp=drive_link" },
+              { id:"16", title:"Workshop React Java Script", org:"Dicoding", link:"https://drive.google.com/file/d/1bR4imQBc6oLPLhe88rMi1QRJKCMPMb7W/view?usp=drive_link" },
+              { id:"17", title:"Library Innovation for the Future", org:"Open Library Telkom Univ", link:"https://drive.google.com/file/d/1ply2JKNs1XwgTPv6rrPR6RZ-MzcaV2w-/view?usp=drive_link" },
+              { id:"18", title:"ASEAN Data Science Explorers", org:"ASEAN DSE 2024", link:"https://drive.google.com/file/d/1SPuHLzil2PFoCbPE1Y52VeIjlQt3WNvJ/view?usp=sharing" },
+              { id:"19", title:"Data Analytics in Business", org:"GDSC Telkom Univ", link:"https://drive.google.com/file/d/1ZFFIP8DV_wVFDSEccR_rPgAAlinv8iFm/view?usp=drive_link" },
+              { id:"20", title:"WebVenture Mentorship", org:"Telkom University", link:"https://drive.google.com/file/d/1Mt-MhhOJq1OQI8rzJXIs4mGPt7xlYILy/view?usp=sharing" }
+            ];
+            
+            document.write(certs.map(c => `
+              <div class="swiper-slide">
+                <a class="cert-card" href="${c.link}" target="_blank" data-hover>
+                  <div class="cert-top"><i class="ri-medal-fill"></i> <span style="color:var(--text-muted); font-family:'Space Grotesk'">${c.id} / 20</span></div>
+                  <div>
+                    <h4>${c.title}</h4>
+                    <p>by ${c.org}</p>
+                  </div>
+                </a>
+              </div>
+            `).join(''));
+          </script>
+        </div>
+      </div>
+      <div class="cert-controls wrap">
+        <div class="cert-nav-btns">
+          <button id="certPrev" class="cert-btn"><i class="ri-arrow-left-line"></i></button>
+          <button id="certNext" class="cert-btn"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact wrap">
+      <h2 class="reveal">Have an idea?<span>Let's build it.</span></h2>
+      <div class="contact-links reveal">
+        <a href="mailto:raniazamrizq23@gmail.com" data-hover><i class="ri-mail-send-fill"></i> Email Me</a>
+        <a href="https://www.linkedin.com/in/raniazamrizq" target="_blank" data-hover><i class="ri-linkedin-fill"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/rzamrizq/?igsh=MXE4ZnNsbXJlaGVpcw%3D%3D#" target="_blank" data-hover><i class="ri-instagram-fill"></i> Instagram</a>
+        <a href="tel:+6282111371337" data-hover><i class="ri-phone-fill"></i> +62 821-1137-1337</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Rania Zamrizq. All Rights Reserved.</div>
+    <button id="to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const isFine = window.matchMedia('(pointer:fine)').matches;
+
+    // ----- Preloader & Intro Animation -----
+    const tlLoader = gsap.timeline();
+    tlLoader.to('.pl-text span', { yPercent: -100, duration: 1.5, ease: 'power4.inOut' })
+            .to('.pl-bar', { width: '100%', duration: 1.5, ease: 'power4.inOut' }, '<')
+            .to('#preloader', { yPercent: -100, duration: 1, ease: 'power3.inOut' })
+            .from('.hero-title', { y: 100, opacity: 0, duration: 1, ease: 'power4.out' }, '-=0.5')
+            .from('.hero-sub', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.8')
+            .from('.hero-photo', { scale: 0.8, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=1')
+            .from('.nav', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=1');
+
+    // ----- Custom Cursor & Hover Effects -----
+    if (isFine) {
+      const dot = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      
+      gsap.set(dot, {xPercent: -50, yPercent: -50});
+      gsap.set(ring, {xPercent: -50, yPercent: -50});
+      
+      let xTo = gsap.quickTo(dot, "x", {duration: 0.1, ease: "power3"}),
+          yTo = gsap.quickTo(dot, "y", {duration: 0.1, ease: "power3"}),
+          xToRing = gsap.quickTo(ring, "x", {duration: 0.3, ease: "power3"}),
+          yToRing = gsap.quickTo(ring, "y", {duration: 0.3, ease: "power3"});
+
+      window.addEventListener("mousemove", e => {
+        xTo(e.clientX); yTo(e.clientY);
+        xToRing(e.clientX); yToRing(e.clientY);
       });
-    </script>
-  </body>
+
+      document.querySelectorAll('a, button, [data-hover]').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+      });
+      
+      // Magnetic Cards Effect (Glass Cards follow mouse light)
+      document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+
+    // ----- Scroll Animations -----
+    gsap.utils.toArray('.reveal').forEach(elem => {
+      gsap.to(elem, {
+        scrollTrigger: {
+          trigger: elem,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      });
+    });
+
+    // Parallax on Mesh Background
+    gsap.to('.bg-mesh', {
+      yPercent: 20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true
+      }
+    });
+
+    // ----- Certificates Swiper -----
+    const certSwiper = new Swiper('.cert-swiper', {
+      slidesPerView: 1.1,
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: true,
+      grabCursor: true,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      breakpoints: {
+        640: { slidesPerView: 2.1, spaceBetween: 24 },
+        1024: { slidesPerView: 3.1, spaceBetween: 30 }
+      }
+    });
+    document.getElementById('certPrev').addEventListener('click', () => certSwiper.slidePrev());
+    document.getElementById('certNext').addEventListener('click', () => certSwiper.slideNext());
+
+    // ----- Mobile Menu -----
+    const menuBtn = document.getElementById('menuBtn');
+    const menuOverlay = document.getElementById('menu-overlay');
+    menuBtn.addEventListener('click', () => menuOverlay.classList.toggle('open'));
+    document.querySelectorAll('.menu-link').forEach(link => {
+      link.addEventListener('click', () => menuOverlay.classList.remove('open'));
+    });
+
+    // ----- Back to Top -----
+    document.getElementById('to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>
