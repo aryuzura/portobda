@@ -6,7 +6,6 @@
 <title>Rania Zamrizq - Portfolio</title>
 <meta name="description" content="Rania Zamrizq - Business Analyst, Project Management & AI Engineer. Portfolio of experiences, projects and certificates.">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rania Zamrizq - Portfolio">
 <meta property="og:description" content="Business Analyst, Project Management & AI Engineer portfolio.">
@@ -27,9 +26,9 @@
     --text-muted: #8e8e99;
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
-    --accent-1: #6a00ff; /* Purple */
-    --accent-2: #00d2ff; /* Cyan */
-    --accent-3: #ff5a2b; /* Original Orange */
+    --accent-1: #6a00ff; 
+    --accent-2: #00d2ff; 
+    --accent-3: #ff5a2b; 
     --ease: cubic-bezier(.19, 1, .22, 1);
   }
 
@@ -61,7 +60,6 @@
     letter-spacing: -0.02em;
   }
 
-  /* ---------- Global Layout & Gaps ---------- */
   .wrap { 
     width: 100%; 
     max-width: 1400px; 
@@ -75,7 +73,6 @@
     padding-block: clamp(5rem, 10vw, 8rem); 
   }
 
-  /* ---------- Animated Mesh Gradient Background ---------- */
   .bg-mesh {
     position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
     background: var(--bg); filter: blur(80px); opacity: 0.7;
@@ -94,7 +91,6 @@
     100% { transform: translate(10vw, 15vh) scale(1.3); }
   }
 
-  /* ---------- Custom Cursor ---------- */
   #cursor-dot, #cursor-ring {
     position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
     border-radius: 50%; transform: translate(-50%, -50%);
@@ -109,7 +105,6 @@
   }
   @media (pointer: coarse) { #cursor-dot, #cursor-ring { display: none; } }
 
-  /* ---------- Preloader ---------- */
   #preloader {
     position: fixed; inset: 0; z-index: 10000; background: var(--bg);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
@@ -119,7 +114,6 @@
   .pl-bar-container { width: 200px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden; border-radius: 2px; }
   .pl-bar { width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
 
-  /* ---------- Floating Nav ---------- */
   .nav-wrapper {
     position: fixed; top: 2rem; left: 0; width: 100%; z-index: 900;
     display: flex; justify-content: center; padding: 0 clamp(1.5rem, 5vw, 4rem);
@@ -141,7 +135,6 @@
   .menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
   @media (max-width: 900px) { .nav-links { display: none; } .menu-btn { display: block; } }
 
-  /* Mobile Menu */
   #menu-overlay {
     position: fixed; inset: 0; background: rgba(7, 7, 10, 0.95); backdrop-filter: blur(20px);
     z-index: 1050; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
@@ -151,7 +144,6 @@
   #menu-overlay.open { transform: translateY(0); }
   #menu-overlay a { font-family: 'Space Grotesk'; font-size: clamp(2rem, 8vw, 3rem); font-weight: 600; color: #fff; }
 
-  /* ---------- Hero Section ---------- */
   .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 8rem; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
   
@@ -181,6 +173,7 @@
     border: 1px solid rgba(255,255,255,0.1);
   }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  
   .floating-badge {
     position: absolute; bottom: -20px; left: -20px;
     background: rgba(20, 20, 25, 0.8); backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
@@ -188,6 +181,16 @@
     animation: float 5s ease-in-out infinite reverse; z-index: 3;
   }
   .floating-badge i { font-size: 2rem; color: var(--accent-2); }
+
+  .award-badge {
+    position: absolute; top: 15%; right: -30px;
+    background: rgba(20, 20, 25, 0.85); backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 0.8rem 1.2rem; border-radius: 16px; display: flex; align-items: center; gap: 0.8rem;
+    animation: float 5s ease-in-out infinite 1s; z-index: 3;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  }
+  .award-badge i { font-size: 1.8rem; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.5); }
   
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
@@ -196,16 +199,14 @@
     .hero-photo-wrap { justify-self: center; order: -1; max-width: 320px; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .floating-badge { 
-      left: 50%; 
-      transform: translateX(-50%); 
-      bottom: -20px; 
-      animation: none;
-      width: max-content;
-      max-width: 90%;
+      left: 50%; transform: translateX(-50%); bottom: -20px; 
+      animation: none; width: max-content; max-width: 90%;
+    }
+    .award-badge {
+      right: -10px; top: -15px; animation: none; transform: scale(0.9);
     }
   }
 
-  /* ---------- Marquee ---------- */
   .marquee-strip {
     background: var(--glass-bg); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
     padding: 1.5rem 0; overflow: hidden; display: flex; position: relative; z-index: 2; backdrop-filter: blur(10px);
@@ -220,12 +221,10 @@
   .marquee-track span i { color: var(--accent-2); font-size: 1.5rem; -webkit-text-stroke: 0; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ---------- Section Headers ---------- */
   .sec-head { margin-bottom: 3.5rem; text-align: center; }
   .sec-head h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
   .sec-head p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
 
-  /* ---------- Experiences ---------- */
   .exp-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); 
@@ -257,7 +256,6 @@
   }
   .glass-card:hover img { filter: grayscale(0); }
 
-  /* ---------- About ---------- */
   .about-container {
     background: linear-gradient(135deg, rgba(20,20,25,0.8), rgba(10,10,15,0.8)); 
     border: 1px solid var(--glass-border);
@@ -298,7 +296,6 @@
     .skills-grid { grid-template-columns: 1fr; } 
   }
 
-  /* ---------- Projects ---------- */
   .proj-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); 
@@ -334,7 +331,6 @@
   }
   .proj-card:hover .icon-link { opacity: 1; transform: scale(1); background: var(--accent-1); }
 
-  /* ---------- Certificates Swiper ---------- */
   .cert-swiper { overflow: hidden; padding-bottom: 2rem; max-width: 100%; }
   .cert-swiper .swiper-wrapper { display: flex; }
   .cert-card {
@@ -357,7 +353,6 @@
   }
   .cert-btn:hover { background: #fff; color: #000; }
   
-  /* ---------- Contact ---------- */
   .contact { text-align: center; padding: 6rem 0; }
   .contact h2 { font-size: clamp(2.5rem, 7vw, 6rem); line-height: 1.1; margin-bottom: 3rem; }
   .contact h2 span { color: var(--text-muted); display: block; font-size: clamp(1.8rem, 4vw, 3.5rem); margin-top: 0.5rem; }
@@ -380,13 +375,11 @@
   #to-top { background: rgba(255,255,255,0.05); border: none; width: 45px; height: 45px; border-radius: 50%; color: #fff; cursor: pointer; transition: 0.3s; }
   #to-top:hover { background: var(--accent-1); }
 
-  /* Utility */
   .reveal { opacity: 0; transform: translateY(40px); }
 </style>
 </head>
 <body>
 
-  <!-- Animated Mesh Background -->
   <div class="bg-mesh">
     <div class="mesh-blob mesh-1"></div>
     <div class="mesh-blob mesh-2"></div>
@@ -401,7 +394,6 @@
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
 
-  <!-- Floating Nav -->
   <div class="nav-wrapper">
     <nav class="nav">
       <a href="#top" class="logo">RANIA<span>.</span></a>
@@ -442,6 +434,7 @@
           <div class="hero-photo" data-hover>
             <img src="a1.png" alt="Rania Zamrizq">
           </div>
+          
           <div class="floating-badge">
             <i class="ri-bar-chart-box-line"></i>
             <div>
@@ -449,6 +442,15 @@
               <div style="font-size: 0.75rem; color: var(--text-muted);">Data-driven approaches</div>
             </div>
           </div>
+
+          <div class="award-badge">
+            <i class="ri-award-fill"></i>
+            <div>
+              <div style="font-weight: 700; color: #ffd700; font-size: 0.95rem;">Future Leader Award</div>
+              <div style="font-size: 0.75rem; color: #fff;">PT Radius Data Solusi</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -473,6 +475,8 @@
           <ul>
             <li>Conducted business requirement analysis with stakeholders.</li>
             <li>Developed and maintained documentation (BRD, FRD, SRS).</li>
+            <!-- NEW: Bullet point for the award -->
+            <li><strong style="color: #ffd700;">Achieved the "Future Leader Award" for outstanding performance.</strong></li>
           </ul>
           <img src="t.jpeg" alt="Business Analyst Intern">
         </div>
@@ -766,7 +770,7 @@
         el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
         el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
       });
-      
+
       document.querySelectorAll('.glass-card').forEach(card => {
         card.addEventListener('mousemove', e => {
           const rect = card.getBoundingClientRect();
