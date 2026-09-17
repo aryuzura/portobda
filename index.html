@@ -62,20 +62,19 @@
   }
 
   /* ---------- Global Layout & Gaps ---------- */
-    .wrap { 
+  .wrap { 
     width: 100%; 
     max-width: 1400px; 
     margin: 0 auto; 
-    /* Gunakan padding-inline untuk kiri-kanan saja */
     padding-inline: clamp(1.5rem, 5vw, 4rem); 
-    }
+  }
 
-    section { 
+  section { 
     position: relative; 
     z-index: 2; 
-    /* Gunakan padding-block untuk atas-bawah saja */
     padding-block: clamp(5rem, 10vw, 8rem); 
-    }
+  }
+
   /* ---------- Animated Mesh Gradient Background ---------- */
   .bg-mesh {
     position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
@@ -147,9 +146,10 @@
     position: fixed; inset: 0; background: rgba(7, 7, 10, 0.95); backdrop-filter: blur(20px);
     z-index: 1050; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
     transform: translateY(-100%); transition: transform .6s var(--ease);
+    overflow-y: auto; padding: 2rem 0;
   }
   #menu-overlay.open { transform: translateY(0); }
-  #menu-overlay a { font-family: 'Space Grotesk'; font-size: 3rem; font-weight: 600; color: #fff; }
+  #menu-overlay a { font-family: 'Space Grotesk'; font-size: clamp(2rem, 8vw, 3rem); font-weight: 600; color: #fff; }
 
   /* ---------- Hero Section ---------- */
   .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 8rem; }
@@ -193,9 +193,16 @@
 
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
-    .hero-photo-wrap { justify-self: center; order: -1; }
+    .hero-photo-wrap { justify-self: center; order: -1; max-width: 320px; }
     .hero-sub { margin-left: auto; margin-right: auto; }
-    .floating-badge { left: 50%; transform: translateX(-50%); bottom: -20px; animation: none; }
+    .floating-badge { 
+      left: 50%; 
+      transform: translateX(-50%); 
+      bottom: -20px; 
+      animation: none;
+      width: max-content;
+      max-width: 90%;
+    }
   }
 
   /* ---------- Marquee ---------- */
@@ -218,10 +225,9 @@
   .sec-head h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
   .sec-head p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
 
-  /* ---------- Experiences (Consistent Bento Grid) ---------- */
+  /* ---------- Experiences ---------- */
   .exp-grid { 
     display: grid; 
-    /* minmax diatur menggunakan fungsi min() agar tidak overflow/tabrakan di layar HP kecil */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); 
     gap: 1.5rem; 
   }
@@ -230,7 +236,7 @@
     padding: clamp(1.5rem, 4vw, 2.2rem); 
     backdrop-filter: blur(10px); position: relative; overflow: hidden;
     transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
-    display: flex; flex-direction: column; /* Menjaga konsistensi jarak konten & gambar */
+    display: flex; flex-direction: column; 
     height: 100%;
   }
   .glass-card::before {
@@ -246,7 +252,7 @@
   .glass-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent-2); }
   .glass-card img { 
     width: 100%; height: 180px; object-fit: cover; border-radius: 10px; 
-    margin-top: auto; /* Memaksa gambar selalu berada di bawah (konsisten) */
+    margin-top: auto; 
     filter: grayscale(1); transition: filter 0.4s; 
   }
   .glass-card:hover img { filter: grayscale(0); }
@@ -258,7 +264,7 @@
     border-radius: 24px; 
     padding: clamp(2rem, 5vw, 5rem); 
     display: grid; 
-    grid-template-columns: 1.1fr 0.9fr; /* Rasio proporsional kiri-kanan */
+    grid-template-columns: 1.1fr 0.9fr; 
     gap: 4rem;
     backdrop-filter: blur(20px); 
     align-items: center;
@@ -266,7 +272,6 @@
   .about-text h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
   .about-text p { font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.6; color: #e0e0e0; margin-bottom: 1.5rem; }
   
-  /* Ubah flex menjadi grid 2 kolom agar sangat rapi */
   .skills-grid { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -281,22 +286,21 @@
     border-radius: 100px;
     font-size: 0.95rem; 
     transition: background 0.3s, transform 0.3s;
-    width: 100%; /* Memaksa lebar tag sama rata */
+    width: 100%; 
   }
   .skill-tag i { color: var(--accent-1); font-size: 1.2rem; flex-shrink: 0; }
   .skill-tag:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
   
-  /* Responsif untuk Mobile & Tablet */
   @media (max-width: 900px) { 
     .about-container { grid-template-columns: 1fr; gap: 2.5rem; } 
   }
   @media (max-width: 500px) {
-    .skills-grid { grid-template-columns: 1fr; } /* Jadi 1 baris ke bawah di HP kecil */
+    .skills-grid { grid-template-columns: 1fr; } 
   }
-  /* ---------- Projects (Creative Grid) ---------- */
+
+  /* ---------- Projects ---------- */
   .proj-grid {
     display: grid; 
-    /* Menggunakan min() untuk mencegah overflow pada mobile/tabrakan padding */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); 
     gap: 1.5rem;
   }
@@ -331,12 +335,14 @@
   .proj-card:hover .icon-link { opacity: 1; transform: scale(1); background: var(--accent-1); }
 
   /* ---------- Certificates Swiper ---------- */
-  .cert-swiper { overflow: visible; padding-bottom: 2rem; }
+  .cert-swiper { overflow: hidden; padding-bottom: 2rem; max-width: 100%; }
+  .cert-swiper .swiper-wrapper { display: flex; }
   .cert-card {
     background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;
     padding: clamp(1.5rem, 4vw, 2.5rem); min-height: 280px; 
     display: flex; flex-direction: column; justify-content: space-between;
     backdrop-filter: blur(10px); transition: border-color 0.4s;
+    height: auto;
   }
   .cert-card:hover { border-color: var(--accent-2); }
   .cert-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
@@ -420,7 +426,6 @@
   </div>
 
   <main id="top">
-    <!-- Hero Section -->
     <section class="hero wrap" id="hero">
       <div class="hero-grid">
         <div class="hero-text">
@@ -448,7 +453,6 @@
       </div>
     </section>
 
-    <!-- Marquee -->
     <div class="marquee-strip">
       <div class="marquee-track">
         <span><i class="ri-sparkling-line"></i>Business Development<i class="ri-sparkling-line"></i>Project Management<i class="ri-sparkling-line"></i>Data Analysis<i class="ri-sparkling-line"></i>UI/UX Design<i class="ri-sparkling-line"></i>Public Speaking</span>
@@ -456,7 +460,6 @@
       </div>
     </div>
 
-    <!-- Experiences -->
     <section id="experiences" class="wrap">
       <div class="sec-head reveal">
         <h2>Experience</h2>
@@ -521,7 +524,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="wrap">
       <div class="about-container reveal">
         <div class="about-text">
@@ -540,7 +542,6 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section id="projects" class="wrap">
       <div class="sec-head reveal">
         <h2>Selected Works</h2>
@@ -657,7 +658,6 @@
       </div>
     </section>
 
-    <!-- Certificates -->
     <section id="certificates" class="wrap">
       <div class="sec-head reveal">
         <h2>Certifications</h2>
@@ -712,7 +712,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="contact wrap">
       <h2 class="reveal">Have an idea?<span>Let's build it.</span></h2>
       <div class="contact-links reveal">
@@ -729,7 +728,6 @@
     <button id="to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
@@ -738,7 +736,6 @@
     gsap.registerPlugin(ScrollTrigger);
     const isFine = window.matchMedia('(pointer:fine)').matches;
 
-    // ----- Preloader & Intro Animation -----
     const tlLoader = gsap.timeline();
     tlLoader.to('.pl-text span', { yPercent: -100, duration: 1.5, ease: 'power4.inOut' })
             .to('.pl-bar', { width: '100%', duration: 1.5, ease: 'power4.inOut' }, '<')
@@ -748,7 +745,6 @@
             .from('.hero-photo', { scale: 0.8, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=1')
             .from('.nav', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=1');
 
-    // ----- Custom Cursor & Hover Effects -----
     if (isFine) {
       const dot = document.getElementById('cursor-dot');
       const ring = document.getElementById('cursor-ring');
@@ -771,7 +767,6 @@
         el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
       });
       
-      // Magnetic Cards Effect (Glass Cards follow mouse light)
       document.querySelectorAll('.glass-card').forEach(card => {
         card.addEventListener('mousemove', e => {
           const rect = card.getBoundingClientRect();
@@ -783,7 +778,6 @@
       });
     }
 
-    // ----- Scroll Animations -----
     gsap.utils.toArray('.reveal').forEach(elem => {
       gsap.to(elem, {
         scrollTrigger: {
@@ -798,7 +792,6 @@
       });
     });
 
-    // Parallax on Mesh Background
     gsap.to('.bg-mesh', {
       yPercent: 20,
       ease: "none",
@@ -810,7 +803,6 @@
       }
     });
 
-    // ----- Certificates Swiper -----
     const certSwiper = new Swiper('.cert-swiper', {
       slidesPerView: 1.1,
       spaceBetween: 20,
@@ -826,7 +818,6 @@
     document.getElementById('certPrev').addEventListener('click', () => certSwiper.slidePrev());
     document.getElementById('certNext').addEventListener('click', () => certSwiper.slideNext());
 
-    // ----- Mobile Menu -----
     const menuBtn = document.getElementById('menuBtn');
     const menuOverlay = document.getElementById('menu-overlay');
     menuBtn.addEventListener('click', () => menuOverlay.classList.toggle('open'));
@@ -834,7 +825,6 @@
       link.addEventListener('click', () => menuOverlay.classList.remove('open'));
     });
 
-    // ----- Back to Top -----
     document.getElementById('to-top').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
